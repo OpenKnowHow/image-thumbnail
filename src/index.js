@@ -130,7 +130,7 @@ const sharpResize = (imageBuffer, dimensions, jpegOptions, fit, failOnError, wit
     return new Promise((resolve, reject) => {
         let result = sharp(imageBuffer, { failOnError })
             .resize({
-                ...dimensions, withoutEnlargement: true, fit: fit ? fit : 'contain', background: 'white'
+                ...dimensions, withoutEnlargement: false, fit: fit ? fit : 'contain', background: 'white'
             })
 
             if(withMetadata){
